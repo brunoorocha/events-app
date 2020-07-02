@@ -11,5 +11,5 @@ import RxSwift
 protocol EventsServiceProtocol {
     func getEvents () -> Single<[Event]>
     func getEvent (withId id: Int) -> Single<Event>
-    func checkin (participant: Any, onEvent event: Any, withCupom cupom: Cupom?) -> Completable
+    func checkin (_ payload: CheckinPayload) -> Completable
 }

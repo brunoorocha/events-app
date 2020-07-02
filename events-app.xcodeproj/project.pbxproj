@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		0AD338FFF30CDD89A0461EBA /* Pods_events_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B217083A0B994246E249BEB /* Pods_events_appTests.framework */; };
 		7E6EAC3BFED19DE33554C961 /* Pods_events_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC68E4BC5AFE0245CDE27A96 /* Pods_events_app.framework */; };
+		A3165ABB24AE8C6000ADD81A /* CheckinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3165ABA24AE8C6000ADD81A /* CheckinData.swift */; };
 		A337CE8324AE86CE00E48BC8 /* EventsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8224AE86CE00E48BC8 /* EventsServiceProtocol.swift */; };
 		A337CE8624AE871500E48BC8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8524AE871500E48BC8 /* Event.swift */; };
 		A337CE8824AE87AE00E48BC8 /* Cupom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8724AE87AE00E48BC8 /* Cupom.swift */; };
+		A337CE8B24AE892600E48BC8 /* EventsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8A24AE892600E48BC8 /* EventsApiService.swift */; };
+		A337CE8E24AE89A600E48BC8 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8D24AE89A600E48BC8 /* EventsApi.swift */; };
 		A3896F2D24AE7A6200C9E2EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3896F2C24AE7A6200C9E2EE /* AppDelegate.swift */; };
 		A3896F2F24AE7A6200C9E2EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3896F2E24AE7A6200C9E2EE /* SceneDelegate.swift */; };
 		A3896F3124AE7A6200C9E2EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3896F3024AE7A6200C9E2EE /* ViewController.swift */; };
@@ -38,9 +41,12 @@
 		0B217083A0B994246E249BEB /* Pods_events_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_events_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2407867DDDBD22644838C407 /* Pods-events-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-events-app.release.xcconfig"; path = "Target Support Files/Pods-events-app/Pods-events-app.release.xcconfig"; sourceTree = "<group>"; };
 		8D059CB228D4C72A5243AE9E /* Pods-events-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-events-appTests.release.xcconfig"; path = "Target Support Files/Pods-events-appTests/Pods-events-appTests.release.xcconfig"; sourceTree = "<group>"; };
+		A3165ABA24AE8C6000ADD81A /* CheckinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinData.swift; sourceTree = "<group>"; };
 		A337CE8224AE86CE00E48BC8 /* EventsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceProtocol.swift; sourceTree = "<group>"; };
 		A337CE8524AE871500E48BC8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A337CE8724AE87AE00E48BC8 /* Cupom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupom.swift; sourceTree = "<group>"; };
+		A337CE8A24AE892600E48BC8 /* EventsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApiService.swift; sourceTree = "<group>"; };
+		A337CE8D24AE89A600E48BC8 /* EventsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
 		A3896F2924AE7A6200C9E2EE /* events-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "events-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3896F2C24AE7A6200C9E2EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3896F2E24AE7A6200C9E2EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 		A337CE7F24AE855D00E48BC8 /* events */ = {
 			isa = PBXGroup;
 			children = (
+				A337CE8C24AE896600E48BC8 /* api */,
 				A337CE8424AE870300E48BC8 /* models */,
 				A337CE8224AE86CE00E48BC8 /* EventsServiceProtocol.swift */,
 			);
@@ -102,8 +109,18 @@
 			children = (
 				A337CE8524AE871500E48BC8 /* Event.swift */,
 				A337CE8724AE87AE00E48BC8 /* Cupom.swift */,
+				A3165ABA24AE8C6000ADD81A /* CheckinData.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		A337CE8C24AE896600E48BC8 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				A337CE8A24AE892600E48BC8 /* EventsApiService.swift */,
+				A337CE8D24AE89A600E48BC8 /* EventsApi.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		A3896F2024AE7A6200C9E2EE = {
@@ -389,7 +406,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3D8E2D424AE833600388B7D /* BaseViewController.swift in Sources */,
+				A337CE8E24AE89A600E48BC8 /* EventsApi.swift in Sources */,
+				A337CE8B24AE892600E48BC8 /* EventsApiService.swift in Sources */,
 				A337CE8624AE871500E48BC8 /* Event.swift in Sources */,
+				A3165ABB24AE8C6000ADD81A /* CheckinData.swift in Sources */,
 				A3D8E2D224AE830800388B7D /* BaseNavigationController.swift in Sources */,
 				A3896F3124AE7A6200C9E2EE /* ViewController.swift in Sources */,
 				A337CE8824AE87AE00E48BC8 /* Cupom.swift in Sources */,
