@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 import UIKit
 
 class EventsViewController: BaseViewController {
@@ -19,7 +20,7 @@ class EventsViewController: BaseViewController {
         title = "Eventos"
 
         bindToViewModel()
-//        requestEvents()
+        requestEvents()
     }
 
     override func loadView() {
@@ -46,11 +47,11 @@ class EventsViewController: BaseViewController {
             .disposed(by: disposeBag)
 
         viewModel.events
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { events in
-                print(events)
-            })
-            .disposed(by: disposeBag)
+            .bind(to: eventsView.tableView.rx.items(cellIdentifier: eventsView.cellIdentifier, cellType: UITableViewCell.self)) { (row, event, cell) in
+                cell.textLabel?.text = event.title
+                cell.detailTextLabel?.text = "\(event.price)"
+                
+            }.disposed(by: disposeBag)
     }
 }
 

@@ -7,6 +7,8 @@ target 'events-app' do
 
   # Pods for events-app
   pod 'Moya/RxSwift', '~> 14.0'
+  pod 'RxCocoa'
+  pod 'TinyConstraints'
 
   target 'events-appTests' do
     inherit! :search_paths
