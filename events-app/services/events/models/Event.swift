@@ -9,12 +9,12 @@
 import Foundation
 
 struct Event: Decodable {
-    let id: Int
+    let id: String
     let title: String
     let description: String
     let image: String
-    let latitude: Int
-    let longitude: Int
+    let latitude: Double
+    let longitude: Double
     let price: Double
     let cupons: [Cupom]
 }

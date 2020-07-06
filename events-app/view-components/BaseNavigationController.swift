@@ -9,22 +9,26 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureNavigationBar()
     }
-    
 
-    /*
-    // MARK: - Navigation
+    fileprivate func configureNavigationBar() {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.backgroundColor = .white
+        navigationBarAppearance.shadowColor = nil
+        navigationBarAppearance.shadowImage = nil
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        navigationBarAppearance.largeTitleTextAttributes = [
+            .foregroundColor: UIColor.black,
+            .font: Typography.heading1.toUIFont
+        ]
+
+        navigationBar.compactAppearance = navigationBarAppearance
+        navigationBar.standardAppearance = navigationBarAppearance
+        navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        navigationBar.prefersLargeTitles = true
     }
-    */
-
 }

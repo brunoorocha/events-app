@@ -15,9 +15,19 @@
 		A337CE8824AE87AE00E48BC8 /* Cupom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8724AE87AE00E48BC8 /* Cupom.swift */; };
 		A337CE8B24AE892600E48BC8 /* EventsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8A24AE892600E48BC8 /* EventsApiService.swift */; };
 		A337CE8E24AE89A600E48BC8 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8D24AE89A600E48BC8 /* EventsApi.swift */; };
+		A33ED42124B292F4005260AD /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33ED42024B292F4005260AD /* NetworkErrors.swift */; };
+		A33ED42524B2A39D005260AD /* UIViewController+presentAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33ED42424B2A39D005260AD /* UIViewController+presentAlertController.swift */; };
+		A33ED42824B2A5AE005260AD /* CanHandleAnErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33ED42724B2A5AE005260AD /* CanHandleAnErrorProtocol.swift */; };
+		A33ED42A24B2A5DB005260AD /* UIViewController+CanHandleAnError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33ED42924B2A5DB005260AD /* UIViewController+CanHandleAnError.swift */; };
+		A33ED42F24B2AE48005260AD /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A33ED42C24B2AE48005260AD /* Poppins-Bold.ttf */; };
+		A33ED43024B2AE48005260AD /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A33ED42D24B2AE48005260AD /* Poppins-Regular.ttf */; };
+		A33ED43124B2AE48005260AD /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A33ED42E24B2AE48005260AD /* Poppins-SemiBold.ttf */; };
+		A33ED43324B2AEBA005260AD /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33ED43224B2AEBA005260AD /* Typography.swift */; };
+		A35C393224AF4D4E00BD7D3A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C393124AF4D4E00BD7D3A /* EventsViewController.swift */; };
+		A35C393424AF4D7E00BD7D3A /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C393324AF4D7E00BD7D3A /* EventsViewModel.swift */; };
+		A35C393624AF54A100BD7D3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C393524AF54A100BD7D3A /* ViewController.swift */; };
 		A3896F2D24AE7A6200C9E2EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3896F2C24AE7A6200C9E2EE /* AppDelegate.swift */; };
 		A3896F2F24AE7A6200C9E2EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3896F2E24AE7A6200C9E2EE /* SceneDelegate.swift */; };
-		A3896F3124AE7A6200C9E2EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3896F3024AE7A6200C9E2EE /* ViewController.swift */; };
 		A3896F3624AE7A6400C9E2EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3896F3524AE7A6400C9E2EE /* Assets.xcassets */; };
 		A3896F3924AE7A6400C9E2EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3896F3724AE7A6400C9E2EE /* LaunchScreen.storyboard */; };
 		A3896F4424AE7A6600C9E2EE /* events_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3896F4324AE7A6600C9E2EE /* events_appTests.swift */; };
@@ -47,10 +57,20 @@
 		A337CE8724AE87AE00E48BC8 /* Cupom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupom.swift; sourceTree = "<group>"; };
 		A337CE8A24AE892600E48BC8 /* EventsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApiService.swift; sourceTree = "<group>"; };
 		A337CE8D24AE89A600E48BC8 /* EventsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
+		A33ED42024B292F4005260AD /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		A33ED42424B2A39D005260AD /* UIViewController+presentAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+presentAlertController.swift"; sourceTree = "<group>"; };
+		A33ED42724B2A5AE005260AD /* CanHandleAnErrorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanHandleAnErrorProtocol.swift; sourceTree = "<group>"; };
+		A33ED42924B2A5DB005260AD /* UIViewController+CanHandleAnError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CanHandleAnError.swift"; sourceTree = "<group>"; };
+		A33ED42C24B2AE48005260AD /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		A33ED42D24B2AE48005260AD /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		A33ED42E24B2AE48005260AD /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		A33ED43224B2AEBA005260AD /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		A35C393124AF4D4E00BD7D3A /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		A35C393324AF4D7E00BD7D3A /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
+		A35C393524AF54A100BD7D3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3896F2924AE7A6200C9E2EE /* events-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "events-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3896F2C24AE7A6200C9E2EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3896F2E24AE7A6200C9E2EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A3896F3024AE7A6200C9E2EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3896F3524AE7A6400C9E2EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3896F3824AE7A6400C9E2EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3896F3A24AE7A6400C9E2EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,8 +139,38 @@
 			children = (
 				A337CE8A24AE892600E48BC8 /* EventsApiService.swift */,
 				A337CE8D24AE89A600E48BC8 /* EventsApi.swift */,
+				A33ED42024B292F4005260AD /* NetworkErrors.swift */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		A33ED42224B2A371005260AD /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				A33ED42324B2A37A005260AD /* extensions */,
+				A33ED42724B2A5AE005260AD /* CanHandleAnErrorProtocol.swift */,
+				A33ED43224B2AEBA005260AD /* Typography.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		A33ED42324B2A37A005260AD /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A33ED42424B2A39D005260AD /* UIViewController+presentAlertController.swift */,
+				A33ED42924B2A5DB005260AD /* UIViewController+CanHandleAnError.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		A33ED42B24B2ADEE005260AD /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A33ED42C24B2AE48005260AD /* Poppins-Bold.ttf */,
+				A33ED42D24B2AE48005260AD /* Poppins-Regular.ttf */,
+				A33ED42E24B2AE48005260AD /* Poppins-SemiBold.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		A3896F2024AE7A6200C9E2EE = {
@@ -146,6 +196,7 @@
 		A3896F2B24AE7A6200C9E2EE /* events-app */ = {
 			isa = PBXGroup;
 			children = (
+				A33ED42224B2A371005260AD /* utils */,
 				A3D8E2CA24AE81B400388B7D /* application */,
 				A3D8E2CB24AE81C100388B7D /* assets */,
 				A337CE7E24AE853400E48BC8 /* services */,
@@ -177,6 +228,7 @@
 		A3D8E2CB24AE81C100388B7D /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				A33ED42B24B2ADEE005260AD /* fonts */,
 				A3896F3524AE7A6400C9E2EE /* Assets.xcassets */,
 			);
 			path = assets;
@@ -193,8 +245,10 @@
 		A3D8E2CD24AE81D600388B7D /* event-list */ = {
 			isa = PBXGroup;
 			children = (
-				A3896F3024AE7A6200C9E2EE /* ViewController.swift */,
 				A3D8E2D524AE83C200388B7D /* EventsView.swift */,
+				A35C393124AF4D4E00BD7D3A /* EventsViewController.swift */,
+				A35C393324AF4D7E00BD7D3A /* EventsViewModel.swift */,
+				A35C393524AF54A100BD7D3A /* ViewController.swift */,
 			);
 			path = "event-list";
 			sourceTree = "<group>";
@@ -322,8 +376,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A33ED43124B2AE48005260AD /* Poppins-SemiBold.ttf in Resources */,
 				A3896F3924AE7A6400C9E2EE /* LaunchScreen.storyboard in Resources */,
+				A33ED42F24B2AE48005260AD /* Poppins-Bold.ttf in Resources */,
 				A3896F3624AE7A6400C9E2EE /* Assets.xcassets in Resources */,
+				A33ED43024B2AE48005260AD /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,18 +462,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35C393624AF54A100BD7D3A /* ViewController.swift in Sources */,
 				A3D8E2D424AE833600388B7D /* BaseViewController.swift in Sources */,
 				A337CE8E24AE89A600E48BC8 /* EventsApi.swift in Sources */,
 				A337CE8B24AE892600E48BC8 /* EventsApiService.swift in Sources */,
 				A337CE8624AE871500E48BC8 /* Event.swift in Sources */,
+				A33ED42124B292F4005260AD /* NetworkErrors.swift in Sources */,
 				A3165ABB24AE8C6000ADD81A /* CheckinData.swift in Sources */,
 				A3D8E2D224AE830800388B7D /* BaseNavigationController.swift in Sources */,
-				A3896F3124AE7A6200C9E2EE /* ViewController.swift in Sources */,
 				A337CE8824AE87AE00E48BC8 /* Cupom.swift in Sources */,
 				A3896F2D24AE7A6200C9E2EE /* AppDelegate.swift in Sources */,
+				A33ED43324B2AEBA005260AD /* Typography.swift in Sources */,
 				A3896F2F24AE7A6200C9E2EE /* SceneDelegate.swift in Sources */,
+				A33ED42524B2A39D005260AD /* UIViewController+presentAlertController.swift in Sources */,
+				A33ED42824B2A5AE005260AD /* CanHandleAnErrorProtocol.swift in Sources */,
 				A3D8E2D824AE83E600388B7D /* BaseScreenView.swift in Sources */,
+				A35C393224AF4D4E00BD7D3A /* EventsViewController.swift in Sources */,
+				A35C393424AF4D7E00BD7D3A /* EventsViewModel.swift in Sources */,
 				A3D8E2D624AE83C200388B7D /* EventsView.swift in Sources */,
+				A33ED42A24B2A5DB005260AD /* UIViewController+CanHandleAnError.swift in Sources */,
 				A337CE8324AE86CE00E48BC8 /* EventsServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

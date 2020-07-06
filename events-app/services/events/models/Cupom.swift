@@ -9,6 +9,6 @@
 import Foundation
 
 struct Cupom: Decodable {
-    let id: Int
+    let id: String
     let discount: Double
 }

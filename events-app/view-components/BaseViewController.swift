@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, CanHandleAnError {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

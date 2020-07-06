@@ -18,6 +18,7 @@ final class EventsApiService: EventsServiceProtocol {
                 .request(.events)
                 .filterSuccessfulStatusCodes()
                 .map([Event].self)
+                .catchError(handleError)
     }
 
     func getEvent(withId id: Int) -> Single<Event> {
@@ -35,5 +36,32 @@ final class EventsApiService: EventsServiceProtocol {
                 .filterSuccessfulStatusCodes()
                 .asObservable()
                 .ignoreElements()
+    }
+    
+    private func handleError (_ error: Error) throws -> PrimitiveSequence<SingleTrait, [Event]> {
+        guard let errorAsMoyaError = error as? MoyaError else {
+            throw error
+        }
+
+        switch errorAsMoyaError {
+        case .objectMapping(_, _):
+            throw NetworkErrors.responseDecoding
+
+        case .encodableMapping(_):
+            throw NetworkErrors.responseDecoding
+
+        case .statusCode(let response):
+            if (response.statusCode == 404) {
+                throw NetworkErrors.resourceNotFound
+            }
+
+            if ((500...599).contains(response.statusCode)) {
+                throw NetworkErrors.serverError
+            }
+            
+            throw NetworkErrors.unknown
+        default:
+            throw NetworkErrors.unknown
+        }
     }
 }
