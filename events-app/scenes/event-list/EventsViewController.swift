@@ -47,10 +47,10 @@ class EventsViewController: BaseViewController {
             .disposed(by: disposeBag)
 
         viewModel.events
-            .bind(to: eventsView.tableView.rx.items(cellIdentifier: eventsView.cellIdentifier, cellType: UITableViewCell.self)) { (row, event, cell) in
-                cell.textLabel?.text = event.title
-                cell.detailTextLabel?.text = "\(event.price)"
-                
+            .bind(to: eventsView.tableView.rx.items(cellIdentifier: eventsView.cellIdentifier, cellType: EventTableViewCell.self)) { (row, event, cell) in
+                cell.titleLabel.text = event.title
+                cell.dateLabel.text = "28/08/2018"
+                cell.priceLabel.text = "\(event.price)"
             }.disposed(by: disposeBag)
     }
 }

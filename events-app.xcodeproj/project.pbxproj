@@ -12,6 +12,11 @@
 		A300FB0B24B3BC400052E9B1 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB0A24B3BC400052E9B1 /* ActivityIndicatorView.swift */; };
 		A300FB0D24B3BCED0052E9B1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB0C24B3BCED0052E9B1 /* Colors.swift */; };
 		A300FB0F24B3BD730052E9B1 /* UIColor+rgba.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB0E24B3BD730052E9B1 /* UIColor+rgba.swift */; };
+		A300FB1324B3C2790052E9B1 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB1224B3C2790052E9B1 /* EventTableViewCell.swift */; };
+		A300FB1524B3C2EB0052E9B1 /* Heading3Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB1424B3C2EB0052E9B1 /* Heading3Label.swift */; };
+		A300FB1724B3C3B50052E9B1 /* RoundedCornersImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB1624B3C3B50052E9B1 /* RoundedCornersImageView.swift */; };
+		A300FB1924B3C70C0052E9B1 /* ParagraphLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB1824B3C70C0052E9B1 /* ParagraphLabel.swift */; };
+		A300FB1B24B3C9170052E9B1 /* SmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB1A24B3C9170052E9B1 /* SmallLabel.swift */; };
 		A3165ABB24AE8C6000ADD81A /* CheckinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3165ABA24AE8C6000ADD81A /* CheckinData.swift */; };
 		A337CE8324AE86CE00E48BC8 /* EventsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8224AE86CE00E48BC8 /* EventsServiceProtocol.swift */; };
 		A337CE8624AE871500E48BC8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8524AE871500E48BC8 /* Event.swift */; };
@@ -57,6 +62,11 @@
 		A300FB0A24B3BC400052E9B1 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A300FB0C24B3BCED0052E9B1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A300FB0E24B3BD730052E9B1 /* UIColor+rgba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgba.swift"; sourceTree = "<group>"; };
+		A300FB1224B3C2790052E9B1 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		A300FB1424B3C2EB0052E9B1 /* Heading3Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heading3Label.swift; sourceTree = "<group>"; };
+		A300FB1624B3C3B50052E9B1 /* RoundedCornersImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersImageView.swift; sourceTree = "<group>"; };
+		A300FB1824B3C70C0052E9B1 /* ParagraphLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphLabel.swift; sourceTree = "<group>"; };
+		A300FB1A24B3C9170052E9B1 /* SmallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLabel.swift; sourceTree = "<group>"; };
 		A3165ABA24AE8C6000ADD81A /* CheckinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinData.swift; sourceTree = "<group>"; };
 		A337CE8224AE86CE00E48BC8 /* EventsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceProtocol.swift; sourceTree = "<group>"; };
 		A337CE8524AE871500E48BC8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -269,6 +279,11 @@
 				A300FB0A24B3BC400052E9B1 /* ActivityIndicatorView.swift */,
 				A3D8E2D324AE833600388B7D /* BaseViewController.swift */,
 				A3D8E2D724AE83E600388B7D /* BaseScreenView.swift */,
+				A300FB1224B3C2790052E9B1 /* EventTableViewCell.swift */,
+				A300FB1424B3C2EB0052E9B1 /* Heading3Label.swift */,
+				A300FB1624B3C3B50052E9B1 /* RoundedCornersImageView.swift */,
+				A300FB1824B3C70C0052E9B1 /* ParagraphLabel.swift */,
+				A300FB1A24B3C9170052E9B1 /* SmallLabel.swift */,
 			);
 			path = "view-components";
 			sourceTree = "<group>";
@@ -471,7 +486,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A300FB1324B3C2790052E9B1 /* EventTableViewCell.swift in Sources */,
 				A35C393624AF54A100BD7D3A /* ViewController.swift in Sources */,
+				A300FB1924B3C70C0052E9B1 /* ParagraphLabel.swift in Sources */,
 				A300FB0F24B3BD730052E9B1 /* UIColor+rgba.swift in Sources */,
 				A300FB0D24B3BCED0052E9B1 /* Colors.swift in Sources */,
 				A3D8E2D424AE833600388B7D /* BaseViewController.swift in Sources */,
@@ -481,6 +498,7 @@
 				A33ED42124B292F4005260AD /* NetworkErrors.swift in Sources */,
 				A300FB0B24B3BC400052E9B1 /* ActivityIndicatorView.swift in Sources */,
 				A3165ABB24AE8C6000ADD81A /* CheckinData.swift in Sources */,
+				A300FB1B24B3C9170052E9B1 /* SmallLabel.swift in Sources */,
 				A3D8E2D224AE830800388B7D /* BaseNavigationController.swift in Sources */,
 				A337CE8824AE87AE00E48BC8 /* Cupom.swift in Sources */,
 				A3896F2D24AE7A6200C9E2EE /* AppDelegate.swift in Sources */,
@@ -489,9 +507,11 @@
 				A33ED42524B2A39D005260AD /* UIViewController+presentAlertController.swift in Sources */,
 				A33ED42824B2A5AE005260AD /* CanHandleAnErrorProtocol.swift in Sources */,
 				A3D8E2D824AE83E600388B7D /* BaseScreenView.swift in Sources */,
+				A300FB1724B3C3B50052E9B1 /* RoundedCornersImageView.swift in Sources */,
 				A35C393224AF4D4E00BD7D3A /* EventsViewController.swift in Sources */,
 				A35C393424AF4D7E00BD7D3A /* EventsViewModel.swift in Sources */,
 				A3D8E2D624AE83C200388B7D /* EventsView.swift in Sources */,
+				A300FB1524B3C2EB0052E9B1 /* Heading3Label.swift in Sources */,
 				A33ED42A24B2A5DB005260AD /* UIViewController+CanHandleAnError.swift in Sources */,
 				A337CE8324AE86CE00E48BC8 /* EventsServiceProtocol.swift in Sources */,
 			);

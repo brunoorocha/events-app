@@ -10,7 +10,7 @@ import UIKit
 import TinyConstraints
 
 class EventsView: BaseScreenView {
-    let cellIdentifier = "cellId"
+    let cellIdentifier = "EventTableViewCell"
     let tableView = UITableView()
     let loadingView = ActivityIndicatorView()
     
@@ -44,7 +44,8 @@ class EventsView: BaseScreenView {
     }
     
     private func setupTableView () {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.separatorColor = .clear
     }
 
     func showLoadingView () {

@@ -11,6 +11,7 @@ import UIKit
 enum Colors {
     case primary
     case text
+    case textLight
     case lightGray
     case mediumGray
     case background
@@ -21,6 +22,8 @@ enum Colors {
             return UIColor.rgba(76, 175, 80)
         case .text:
             return UIColor.rgba(0, 0, 0)
+        case .textLight:
+            return UIColor.rgba(153, 153, 153)
         case .lightGray:
             return UIColor.rgba(229, 229, 229)
         case .mediumGray:
