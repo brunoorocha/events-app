@@ -19,6 +19,6 @@ class BaseScreenView: UIView {
     }
 
     func customize () {
-        backgroundColor = .white
+        backgroundColor = Colors.background.toUIColor
     }
 }

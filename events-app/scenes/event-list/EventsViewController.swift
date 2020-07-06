@@ -34,8 +34,8 @@ class EventsViewController: BaseViewController {
     private func bindToViewModel () {
         viewModel.isLoading
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {
-                print($0)
+            .subscribe(onNext: { isLoading in
+                self.eventsView.isLoading = isLoading
             })
             .disposed(by: disposeBag)
 

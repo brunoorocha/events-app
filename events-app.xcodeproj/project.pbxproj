@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0AD338FFF30CDD89A0461EBA /* Pods_events_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B217083A0B994246E249BEB /* Pods_events_appTests.framework */; };
 		7E6EAC3BFED19DE33554C961 /* Pods_events_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC68E4BC5AFE0245CDE27A96 /* Pods_events_app.framework */; };
+		A300FB0B24B3BC400052E9B1 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB0A24B3BC400052E9B1 /* ActivityIndicatorView.swift */; };
+		A300FB0D24B3BCED0052E9B1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB0C24B3BCED0052E9B1 /* Colors.swift */; };
+		A300FB0F24B3BD730052E9B1 /* UIColor+rgba.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB0E24B3BD730052E9B1 /* UIColor+rgba.swift */; };
 		A3165ABB24AE8C6000ADD81A /* CheckinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3165ABA24AE8C6000ADD81A /* CheckinData.swift */; };
 		A337CE8324AE86CE00E48BC8 /* EventsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8224AE86CE00E48BC8 /* EventsServiceProtocol.swift */; };
 		A337CE8624AE871500E48BC8 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8524AE871500E48BC8 /* Event.swift */; };
@@ -51,6 +54,9 @@
 		0B217083A0B994246E249BEB /* Pods_events_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_events_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2407867DDDBD22644838C407 /* Pods-events-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-events-app.release.xcconfig"; path = "Target Support Files/Pods-events-app/Pods-events-app.release.xcconfig"; sourceTree = "<group>"; };
 		8D059CB228D4C72A5243AE9E /* Pods-events-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-events-appTests.release.xcconfig"; path = "Target Support Files/Pods-events-appTests/Pods-events-appTests.release.xcconfig"; sourceTree = "<group>"; };
+		A300FB0A24B3BC400052E9B1 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		A300FB0C24B3BCED0052E9B1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A300FB0E24B3BD730052E9B1 /* UIColor+rgba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgba.swift"; sourceTree = "<group>"; };
 		A3165ABA24AE8C6000ADD81A /* CheckinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinData.swift; sourceTree = "<group>"; };
 		A337CE8224AE86CE00E48BC8 /* EventsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsServiceProtocol.swift; sourceTree = "<group>"; };
 		A337CE8524AE871500E48BC8 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 				A33ED42324B2A37A005260AD /* extensions */,
 				A33ED42724B2A5AE005260AD /* CanHandleAnErrorProtocol.swift */,
 				A33ED43224B2AEBA005260AD /* Typography.swift */,
+				A300FB0C24B3BCED0052E9B1 /* Colors.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -159,6 +166,7 @@
 			children = (
 				A33ED42424B2A39D005260AD /* UIViewController+presentAlertController.swift */,
 				A33ED42924B2A5DB005260AD /* UIViewController+CanHandleAnError.swift */,
+				A300FB0E24B3BD730052E9B1 /* UIColor+rgba.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 			children = (
 				A3D8E2CF24AE821100388B7D /* storyboards */,
 				A3D8E2D124AE830800388B7D /* BaseNavigationController.swift */,
+				A300FB0A24B3BC400052E9B1 /* ActivityIndicatorView.swift */,
 				A3D8E2D324AE833600388B7D /* BaseViewController.swift */,
 				A3D8E2D724AE83E600388B7D /* BaseScreenView.swift */,
 			);
@@ -463,11 +472,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A35C393624AF54A100BD7D3A /* ViewController.swift in Sources */,
+				A300FB0F24B3BD730052E9B1 /* UIColor+rgba.swift in Sources */,
+				A300FB0D24B3BCED0052E9B1 /* Colors.swift in Sources */,
 				A3D8E2D424AE833600388B7D /* BaseViewController.swift in Sources */,
 				A337CE8E24AE89A600E48BC8 /* EventsApi.swift in Sources */,
 				A337CE8B24AE892600E48BC8 /* EventsApiService.swift in Sources */,
 				A337CE8624AE871500E48BC8 /* Event.swift in Sources */,
 				A33ED42124B292F4005260AD /* NetworkErrors.swift in Sources */,
+				A300FB0B24B3BC400052E9B1 /* ActivityIndicatorView.swift in Sources */,
 				A3165ABB24AE8C6000ADD81A /* CheckinData.swift in Sources */,
 				A3D8E2D224AE830800388B7D /* BaseNavigationController.swift in Sources */,
 				A337CE8824AE87AE00E48BC8 /* Cupom.swift in Sources */,

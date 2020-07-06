@@ -12,11 +12,22 @@ import TinyConstraints
 class EventsView: BaseScreenView {
     let cellIdentifier = "cellId"
     let tableView = UITableView()
+    let loadingView = ActivityIndicatorView()
+    
+    var isLoading = false {
+        didSet {
+            if (isLoading) {
+                showLoadingView()
+                return
+            }
+
+            showTableView()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubviews()
-        setupConstraints()
+        setupSubviews()
         setupTableView()
     }
     
@@ -24,15 +35,27 @@ class EventsView: BaseScreenView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func addSubviews () {
+    private func setupSubviews () {
         addSubview(tableView)
-    }
-    
-    private func setupConstraints () {
+        addSubview(loadingView)
+
         tableView.edgesToSuperview()
+        loadingView.edgesToSuperview()
     }
     
     private func setupTableView () {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+    }
+
+    func showLoadingView () {
+        loadingView.isHidden = false
+        loadingView.startAnimating()
+        tableView.isHidden = true
+    }
+
+    func showTableView () {
+        loadingView.isHidden = true
+        loadingView.stopAnimating()
+        tableView.isHidden = false
     }
 }

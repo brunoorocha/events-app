@@ -17,7 +17,7 @@ class BaseNavigationController: UINavigationController {
     fileprivate func configureNavigationBar() {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
-        navigationBarAppearance.backgroundColor = .white
+        navigationBarAppearance.backgroundColor = Colors.background.toUIColor
         navigationBarAppearance.shadowColor = nil
         navigationBarAppearance.shadowImage = nil
 
