@@ -17,4 +17,5 @@ struct Event: Decodable {
     let longitude: Double
     let price: Double
     let cupons: [Cupom]
+    let date: Date
 }

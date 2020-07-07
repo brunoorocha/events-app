@@ -10,8 +10,8 @@ import RxSwift
 
 struct EventsViewModel {
     var service: EventsServiceProtocol
-    
-    let events: PublishSubject<[Event]> = PublishSubject()
+
+    let events: PublishSubject<[EventCellViewModel]> = PublishSubject()
     let isLoading: PublishSubject<Bool> = PublishSubject()
     let error: PublishSubject<Error> = PublishSubject()
     let disposeBag = DisposeBag()
@@ -25,7 +25,8 @@ struct EventsViewModel {
 
         service.getEvents()
             .subscribe(onSuccess: { events in
-                self.events.onNext(events)
+                let eventsViewModels = events.map { EventCellViewModel(fromEvent: $0) }
+                self.events.onNext(eventsViewModels)
                 self.isLoading.onNext(false)
             }, onError: { error in
                 self.error.onNext(error)

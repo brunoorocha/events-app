@@ -49,8 +49,8 @@ class EventsViewController: BaseViewController {
         viewModel.events
             .bind(to: eventsView.tableView.rx.items(cellIdentifier: eventsView.cellIdentifier, cellType: EventTableViewCell.self)) { (row, event, cell) in
                 cell.titleLabel.text = event.title
-                cell.dateLabel.text = "28/08/2018"
-                cell.priceLabel.text = "\(event.price)"
+                cell.dateLabel.text = event.date
+                cell.priceLabel.text = event.price
             }.disposed(by: disposeBag)
     }
 }

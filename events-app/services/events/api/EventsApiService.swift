@@ -11,13 +11,19 @@ import Moya
 
 final class EventsApiService: EventsServiceProtocol {
     private let provider = MoyaProvider<EventsApi>()
+    private var customDecoder: JSONDecoder
+
+    init () {
+        customDecoder = JSONDecoder()
+        customDecoder.dateDecodingStrategy = .millisecondsSince1970
+    }
 
     func getEvents() -> Single<[Event]> {
         return provider
                 .rx
                 .request(.events)
                 .filterSuccessfulStatusCodes()
-                .map([Event].self)
+                .map([Event].self, using: customDecoder)
                 .catchError(handleError)
     }
 
@@ -26,7 +32,7 @@ final class EventsApiService: EventsServiceProtocol {
                 .rx
                 .request(.event(eventId: id))
                 .filterSuccessfulStatusCodes()
-                .map(Event.self)
+                .map(Event.self, using: customDecoder)
     }
 
     func checkin(_ payload: CheckinPayload) -> Completable {
