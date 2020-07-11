@@ -12,8 +12,17 @@ import UIKit
 
 class EventsViewController: BaseViewController {
     let eventsView = EventsView()
-    let viewModel = EventsViewModel()
     let disposeBag = DisposeBag()
+    let viewModel: EventsViewModel!
+    
+    init (with viewModel: EventsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +34,11 @@ class EventsViewController: BaseViewController {
 
     override func loadView() {
         view = eventsView
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func requestEvents () {
@@ -52,6 +66,11 @@ class EventsViewController: BaseViewController {
                 cell.dateLabel.text = event.date
                 cell.priceLabel.text = event.price
             }.disposed(by: disposeBag)
+
+        eventsView.tableView.rx
+            .modelSelected(EventViewModel.self)
+            .bind(to: viewModel.selectedEvent)
+            .disposed(by: disposeBag)
     }
 }
 

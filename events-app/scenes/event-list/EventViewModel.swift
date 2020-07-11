@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct EventCellViewModel {
+struct EventViewModel {
     let id: String
     let title: String
     let imageUrl: URL?
