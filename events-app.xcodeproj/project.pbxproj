@@ -51,6 +51,7 @@
 		A3C8AD1324BE7805005E72EA /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C8AD1224BE7805005E72EA /* IconView.swift */; };
 		A3C8AD1524BE7C4C005E72EA /* Iconography.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C8AD1424BE7C4C005E72EA /* Iconography.swift */; };
 		A3C8AD1724BE8411005E72EA /* Heading5Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C8AD1624BE8411005E72EA /* Heading5Label.swift */; };
+		A3C8AD1924BF1775005E72EA /* EventCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C8AD1824BF1775005E72EA /* EventCoverView.swift */; };
 		A3D8E2D224AE830800388B7D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8E2D124AE830800388B7D /* BaseNavigationController.swift */; };
 		A3D8E2D424AE833600388B7D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8E2D324AE833600388B7D /* BaseViewController.swift */; };
 		A3D8E2D624AE83C200388B7D /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8E2D524AE83C200388B7D /* EventsView.swift */; };
@@ -120,6 +121,7 @@
 		A3C8AD1224BE7805005E72EA /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		A3C8AD1424BE7C4C005E72EA /* Iconography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iconography.swift; sourceTree = "<group>"; };
 		A3C8AD1624BE8411005E72EA /* Heading5Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heading5Label.swift; sourceTree = "<group>"; };
+		A3C8AD1824BF1775005E72EA /* EventCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCoverView.swift; sourceTree = "<group>"; };
 		A3D8E2D124AE830800388B7D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		A3D8E2D324AE833600388B7D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A3D8E2D524AE83C200388B7D /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				A317D5A824B943560065E66D /* EventDetailsView.swift */,
 				A3C8AD0E24BE501E005E72EA /* EventHeaderView.swift */,
 				A3C8AD1024BE77B2005E72EA /* EventDetailItemView.swift */,
+				A3C8AD1824BF1775005E72EA /* EventCoverView.swift */,
 			);
 			path = "event-details";
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				A3896F2F24AE7A6200C9E2EE /* SceneDelegate.swift in Sources */,
 				A3E0231824B4927D00839D51 /* CurrencyFormatter.swift in Sources */,
 				A33ED42524B2A39D005260AD /* UIViewController+presentAlertController.swift in Sources */,
+				A3C8AD1924BF1775005E72EA /* EventCoverView.swift in Sources */,
 				A317D5A124B938BE0065E66D /* AppCoordinator.swift in Sources */,
 				A3E0231A24B4929300839D51 /* DateFormatter.swift in Sources */,
 				A33ED42824B2A5AE005260AD /* CanHandleAnErrorProtocol.swift in Sources */,
