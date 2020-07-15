@@ -11,24 +11,5 @@ import UIKit
 class BaseNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
-    }
-
-    fileprivate func configureNavigationBar() {
-        let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.configureWithOpaqueBackground()
-        navigationBarAppearance.backgroundColor = Colors.background.toUIColor
-        navigationBarAppearance.shadowColor = nil
-        navigationBarAppearance.shadowImage = nil
-
-        navigationBarAppearance.largeTitleTextAttributes = [
-            .foregroundColor: UIColor.black,
-            .font: Typography.heading1.toUIFont
-        ]
-
-        navigationBar.compactAppearance = navigationBarAppearance
-        navigationBar.standardAppearance = navigationBarAppearance
-        navigationBar.scrollEdgeAppearance = navigationBarAppearance
-        navigationBar.prefersLargeTitles = true
     }
 }

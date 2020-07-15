@@ -59,6 +59,7 @@
 		A3E0231424B48EA300839D51 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0231324B48EA300839D51 /* EventViewModel.swift */; };
 		A3E0231824B4927D00839D51 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0231724B4927D00839D51 /* CurrencyFormatter.swift */; };
 		A3E0231A24B4929300839D51 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0231924B4929300839D51 /* DateFormatter.swift */; };
+		A3E2B40E24BF3AEC00E01064 /* UIApplication+statusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2B40D24BF3AEC00E01064 /* UIApplication+statusBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		A3E0231324B48EA300839D51 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		A3E0231724B4927D00839D51 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		A3E0231924B4929300839D51 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		A3E2B40D24BF3AEC00E01064 /* UIApplication+statusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+statusBarView.swift"; sourceTree = "<group>"; };
 		B9751DB950F76C6CE4EDE96F /* Pods-events-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-events-app.debug.xcconfig"; path = "Target Support Files/Pods-events-app/Pods-events-app.debug.xcconfig"; sourceTree = "<group>"; };
 		CDF7B894AF7C124E7578E4D4 /* Pods-events-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-events-appTests.debug.xcconfig"; path = "Target Support Files/Pods-events-appTests/Pods-events-appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC68E4BC5AFE0245CDE27A96 /* Pods_events_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_events_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +228,7 @@
 				A33ED42424B2A39D005260AD /* UIViewController+presentAlertController.swift */,
 				A33ED42924B2A5DB005260AD /* UIViewController+CanHandleAnError.swift */,
 				A300FB0E24B3BD730052E9B1 /* UIColor+rgba.swift */,
+				A3E2B40D24BF3AEC00E01064 /* UIApplication+statusBarView.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				A3896F2D24AE7A6200C9E2EE /* AppDelegate.swift in Sources */,
 				A33ED43324B2AEBA005260AD /* Typography.swift in Sources */,
 				A3896F2F24AE7A6200C9E2EE /* SceneDelegate.swift in Sources */,
+				A3E2B40E24BF3AEC00E01064 /* UIApplication+statusBarView.swift in Sources */,
 				A3E0231824B4927D00839D51 /* CurrencyFormatter.swift in Sources */,
 				A33ED42524B2A39D005260AD /* UIViewController+presentAlertController.swift in Sources */,
 				A3C8AD1924BF1775005E72EA /* EventCoverView.swift in Sources */,

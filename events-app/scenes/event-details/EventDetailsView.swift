@@ -70,7 +70,10 @@ class EventDetailsView: BaseScreenView {
         itemsStackView.addArrangedSubview(descriptionItem)
 
         itemsStackView.width(to: self)
-        coverView.height(to: self, multiplier: 0.4)
+
+        coverView.heightConstraint = coverView.height(to: self, multiplier: 0.4)
+        coverView.heightConstraint?.isActive = true
+        
     }
 
     private func createItemView (with iconImage: UIImage? = nil, andTitle title: String? = nil) -> EventDetailItemView {
