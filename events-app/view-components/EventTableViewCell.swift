@@ -11,8 +11,8 @@ import TinyConstraints
 
 class EventTableViewCell: UITableViewCell {
     let coverImageView = RoundedCornersImageView(frame: .zero)
-    let titleLabel = Heading3Label()
-    let priceLabel = Heading3Label()
+    let titleLabel = Heading4Label()
+    let priceLabel = Heading4Label()
     let dateLabel = SmallLabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

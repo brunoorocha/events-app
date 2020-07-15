@@ -24,25 +24,16 @@ class EventsView: BaseScreenView {
             showTableView()
         }
     }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupSubviews()
-        setupTableView()
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupSubviews () {
+    override func setupSubviews () {
         addSubview(tableView)
         addSubview(loadingView)
 
         tableView.edgesToSuperview()
         loadingView.edgesToSuperview()
+        setupTableView()
     }
-    
+
     private func setupTableView () {
         tableView.register(EventTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.separatorColor = .clear

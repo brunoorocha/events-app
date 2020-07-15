@@ -12,6 +12,7 @@ class BaseScreenView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         customize()
+        setupSubviews()
     }
     
     required init?(coder: NSCoder) {
@@ -21,4 +22,6 @@ class BaseScreenView: UIView {
     func customize () {
         backgroundColor = Colors.background.toUIColor
     }
+
+    func setupSubviews () {}
 }
