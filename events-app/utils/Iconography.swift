@@ -13,6 +13,7 @@ enum Iconography {
     case location
     case info
     case arrowBack
+    case imagePlaceholder
     
     var toUIImage: UIImage? {
         switch self {
@@ -24,6 +25,8 @@ enum Iconography {
             return UIImage(named: "info_icon")
         case .arrowBack:
             return UIImage(named: "arrow_back_icon")
+        case .imagePlaceholder:
+            return UIImage(named: "image_placeholder")
         }
     }
 }

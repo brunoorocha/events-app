@@ -32,7 +32,11 @@ class EventsCoordinator: Coordinator<Void> {
     }
     
     private func coordinateToEventDetails (eventViewModel: EventViewModel) -> Observable<Void> {
-        let eventDetailsCoordinator = EventDetailsCoordinator(navigationController: navigationController)
+        let eventDetailsCoordinator = EventDetailsCoordinator(
+            viewModel: eventViewModel,
+            navigationController: navigationController
+        )
+
         return coordinate(to: eventDetailsCoordinator)
     }
 }

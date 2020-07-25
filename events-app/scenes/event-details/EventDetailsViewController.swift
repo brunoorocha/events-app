@@ -6,17 +6,32 @@
 //  Copyright © 2020 Bruno Rocha. All rights reserved.
 //
 
+import RxSwift
 import UIKit
 
 class EventDetailsViewController: BaseViewController {
     private let eventDetailsView = EventDetailsView()
     var changeStatusBarStyleOffset: CGFloat = 0
 
+    var viewModel: EventViewModel
+    
+    let disposeBag = DisposeBag()
+
+    init (viewModel: EventViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         eventDetailsView.scrollView.delegate = self
         changeStatusBarStyleOffset = 320
         customizeNavigationBar()
+        bindToViewModel()
     }
 
     override func loadView() {
@@ -67,6 +82,22 @@ class EventDetailsViewController: BaseViewController {
         navigationController?.navigationBar.backgroundColor = newBackgroundColor
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: newTitleColor]
         UIApplication.shared.statusBarUIView?.backgroundColor = newBackgroundColor
+    }
+    
+    private func bindToViewModel () {
+        eventDetailsView.name = viewModel.title
+        eventDetailsView.price = viewModel.price
+        eventDetailsView.date = viewModel.date
+        eventDetailsView.location = viewModel.location
+        eventDetailsView.descriptionText = viewModel.description
+
+        RemoteFileService.shared
+            .getImage(from: viewModel.imageUrl)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] image in
+                self?.eventDetailsView.coverImage = image
+            })
+            .disposed(by: disposeBag)
     }
 }
 

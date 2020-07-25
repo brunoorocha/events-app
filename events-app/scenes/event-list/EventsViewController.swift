@@ -65,6 +65,15 @@ class EventsViewController: BaseViewController {
                 cell.titleLabel.text = event.title
                 cell.dateLabel.text = event.date
                 cell.priceLabel.text = event.price
+
+                RemoteFileService.shared
+                    .getImage(from: event.imageUrl)
+                    .observeOn(MainScheduler.instance)
+                    .subscribe(onNext: { image in
+                        cell.coverImageView.showingImage(image)
+                    })
+                    .disposed(by: self.disposeBag)
+
             }.disposed(by: disposeBag)
 
         eventsView.tableView.rx

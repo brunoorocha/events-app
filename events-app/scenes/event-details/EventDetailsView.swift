@@ -44,6 +44,42 @@ class EventDetailsView: BaseScreenView {
 
     let headerView = EventHeaderView()
     let coverView = EventCoverView()
+    
+    var name: String? = nil {
+        didSet {
+            headerView.eventNameLabel.text = name
+        }
+    }
+
+    var price: String? = nil {
+        didSet {
+            headerView.priceLabel.text = price
+        }
+    }
+    
+    var date: String? = nil {
+        didSet {
+            dateItem.descriptionLabel.text = date
+        }
+    }
+
+    var location: String? = nil {
+        didSet {
+            locationItem.descriptionLabel.text = location
+        }
+    }
+
+    var descriptionText: String? = nil {
+        didSet {
+            descriptionItem.descriptionLabel.text = descriptionText
+        }
+    }
+
+    var coverImage: UIImage? = nil {
+        didSet {
+            coverView.coverImageView.showingImage(coverImage)
+        }
+    }
 
     override func setupSubviews () {
         addSubview(scrollView)
@@ -51,15 +87,6 @@ class EventDetailsView: BaseScreenView {
 
         scrollView.edgesToSuperview()
         stackView.edgesToSuperview(insets: .init(top: 0, left: 0, bottom: 40, right: 0))
-
-        headerView.eventNameLabel.text = "Feira de adoção de animais"
-        headerView.priceLabel.text = "R$ 29,99"
-        
-        dateItem.descriptionLabel.text = "28/08/2018"
-        locationItem.descriptionLabel.text = "Avenida José Bonifácio, Porto Alegre, Rio Grande do Sul."
-        descriptionItem.descriptionLabel.text = """
-        O Patas Dadas estará na Redenção, nesse domingo, com cães para adoção e produtos à venda! Na ocasião, teremos bottons, bloquinhos e camisetas! Traga seu Pet, os amigos e o chima, e venha aproveitar esse dia de sol com a gente e com alguns de nossos peludinhos - que estarão prontinhos para ganhar o ♥ de um humano bem legal pra chamar de seu. Aceitaremos todos os tipos de doação:\n- guias e coleiras em bom estado\n- ração (as que mais precisamos no momento são sênior e filhote)\n- roupinhas \n- cobertas \n- remédios dentro do prazo de validade
-        """
 
         stackView.addArrangedSubview(coverView)
         stackView.addArrangedSubview(headerView)

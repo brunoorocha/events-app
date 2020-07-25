@@ -29,6 +29,10 @@
 		A337CE8824AE87AE00E48BC8 /* Cupom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8724AE87AE00E48BC8 /* Cupom.swift */; };
 		A337CE8B24AE892600E48BC8 /* EventsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8A24AE892600E48BC8 /* EventsApiService.swift */; };
 		A337CE8E24AE89A600E48BC8 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CE8D24AE89A600E48BC8 /* EventsApi.swift */; };
+		A33B51B024CBAE9900C9D4E5 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B51AF24CBAE9900C9D4E5 /* ImageView.swift */; };
+		A33B51B324CBB65A00C9D4E5 /* RemoteFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B51B224CBB65A00C9D4E5 /* RemoteFileService.swift */; };
+		A33B51BA24CC5BA500C9D4E5 /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B51B924CC5BA500C9D4E5 /* EventDetailsViewModel.swift */; };
+		A33B51BC24CC5DCB00C9D4E5 /* EventWithDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B51BB24CC5DCB00C9D4E5 /* EventWithDetailsViewModel.swift */; };
 		A33ED42124B292F4005260AD /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33ED42024B292F4005260AD /* NetworkErrors.swift */; };
 		A33ED42524B2A39D005260AD /* UIViewController+presentAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33ED42424B2A39D005260AD /* UIViewController+presentAlertController.swift */; };
 		A33ED42824B2A5AE005260AD /* CanHandleAnErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33ED42724B2A5AE005260AD /* CanHandleAnErrorProtocol.swift */; };
@@ -96,6 +100,10 @@
 		A337CE8724AE87AE00E48BC8 /* Cupom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupom.swift; sourceTree = "<group>"; };
 		A337CE8A24AE892600E48BC8 /* EventsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApiService.swift; sourceTree = "<group>"; };
 		A337CE8D24AE89A600E48BC8 /* EventsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
+		A33B51AF24CBAE9900C9D4E5 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		A33B51B224CBB65A00C9D4E5 /* RemoteFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFileService.swift; sourceTree = "<group>"; };
+		A33B51B924CC5BA500C9D4E5 /* EventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModel.swift; sourceTree = "<group>"; };
+		A33B51BB24CC5DCB00C9D4E5 /* EventWithDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventWithDetailsViewModel.swift; sourceTree = "<group>"; };
 		A33ED42024B292F4005260AD /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		A33ED42424B2A39D005260AD /* UIViewController+presentAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+presentAlertController.swift"; sourceTree = "<group>"; };
 		A33ED42724B2A5AE005260AD /* CanHandleAnErrorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanHandleAnErrorProtocol.swift; sourceTree = "<group>"; };
@@ -165,6 +173,8 @@
 				A3C8AD0E24BE501E005E72EA /* EventHeaderView.swift */,
 				A3C8AD1024BE77B2005E72EA /* EventDetailItemView.swift */,
 				A3C8AD1824BF1775005E72EA /* EventCoverView.swift */,
+				A33B51B924CC5BA500C9D4E5 /* EventDetailsViewModel.swift */,
+				A33B51BB24CC5DCB00C9D4E5 /* EventWithDetailsViewModel.swift */,
 			);
 			path = "event-details";
 			sourceTree = "<group>";
@@ -172,6 +182,7 @@
 		A337CE7E24AE853400E48BC8 /* services */ = {
 			isa = PBXGroup;
 			children = (
+				A33B51B124CBB63800C9D4E5 /* remote-files */,
 				A337CE7F24AE855D00E48BC8 /* events */,
 			);
 			path = services;
@@ -205,6 +216,14 @@
 				A33ED42024B292F4005260AD /* NetworkErrors.swift */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		A33B51B124CBB63800C9D4E5 /* remote-files */ = {
+			isa = PBXGroup;
+			children = (
+				A33B51B224CBB65A00C9D4E5 /* RemoteFileService.swift */,
+			);
+			path = "remote-files";
 			sourceTree = "<group>";
 		};
 		A33ED42224B2A371005260AD /* utils */ = {
@@ -343,6 +362,7 @@
 				A3C8AD0C24BE4E77005E72EA /* Heading4Label.swift */,
 				A3C8AD1224BE7805005E72EA /* IconView.swift */,
 				A3C8AD1624BE8411005E72EA /* Heading5Label.swift */,
+				A33B51AF24CBAE9900C9D4E5 /* ImageView.swift */,
 			);
 			path = "view-components";
 			sourceTree = "<group>";
@@ -557,6 +577,7 @@
 				A3C8AD1324BE7805005E72EA /* IconView.swift in Sources */,
 				A337CE8B24AE892600E48BC8 /* EventsApiService.swift in Sources */,
 				A337CE8624AE871500E48BC8 /* Event.swift in Sources */,
+				A33B51B024CBAE9900C9D4E5 /* ImageView.swift in Sources */,
 				A3C8AD1124BE77B2005E72EA /* EventDetailItemView.swift in Sources */,
 				A33ED42124B292F4005260AD /* NetworkErrors.swift in Sources */,
 				A3C8AD0F24BE501E005E72EA /* EventHeaderView.swift in Sources */,
@@ -570,8 +591,10 @@
 				A3896F2D24AE7A6200C9E2EE /* AppDelegate.swift in Sources */,
 				A33ED43324B2AEBA005260AD /* Typography.swift in Sources */,
 				A3896F2F24AE7A6200C9E2EE /* SceneDelegate.swift in Sources */,
+				A33B51BA24CC5BA500C9D4E5 /* EventDetailsViewModel.swift in Sources */,
 				A3E2B40E24BF3AEC00E01064 /* UIApplication+statusBarView.swift in Sources */,
 				A3E0231824B4927D00839D51 /* CurrencyFormatter.swift in Sources */,
+				A33B51BC24CC5DCB00C9D4E5 /* EventWithDetailsViewModel.swift in Sources */,
 				A33ED42524B2A39D005260AD /* UIViewController+presentAlertController.swift in Sources */,
 				A3C8AD1924BF1775005E72EA /* EventCoverView.swift in Sources */,
 				A317D5A124B938BE0065E66D /* AppCoordinator.swift in Sources */,
@@ -589,6 +612,7 @@
 				A300FB1524B3C2EB0052E9B1 /* Heading3Label.swift in Sources */,
 				A33ED42A24B2A5DB005260AD /* UIViewController+CanHandleAnError.swift in Sources */,
 				A337CE8324AE86CE00E48BC8 /* EventsServiceProtocol.swift in Sources */,
+				A33B51B324CBB65A00C9D4E5 /* RemoteFileService.swift in Sources */,
 				A3C8AD1524BE7C4C005E72EA /* Iconography.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,13 +10,15 @@ import RxSwift
 
 class EventDetailsCoordinator: Coordinator<Void> {
     var navigationController: UINavigationController?
-    
-    init (navigationController: UINavigationController?) {
+    let viewModel: EventViewModel
+
+    init (viewModel: EventViewModel, navigationController: UINavigationController?) {
         self.navigationController = navigationController
+        self.viewModel = viewModel
     }
 
     override func start() -> Observable<Void> {
-        let eventDetailsViewController = EventDetailsViewController()
+        let eventDetailsViewController = EventDetailsViewController(viewModel: viewModel)
         navigationController?.pushViewController(eventDetailsViewController, animated: true)
         return Observable.never()
     }

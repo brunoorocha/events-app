@@ -11,16 +11,20 @@ import Foundation
 struct EventViewModel {
     let id: String
     let title: String
-    let imageUrl: URL?
+    let imageUrl: String
     let price: String
     let date: String
+    let location: String
+    let description: String
 
     init (fromEvent event: Event) {
         id = event.id
         title = event.title
-        imageUrl = URL(string: event.image)
+        imageUrl = event.image
         price = CurrencyFormatter.format(event.price)
         date = DateFormatterUtils.format(event.date)
+        description = event.description
+        location = ""
     }
 }
 

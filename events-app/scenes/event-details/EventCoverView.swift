@@ -9,12 +9,7 @@
 import UIKit
 
 class EventCoverView: UIView {
-    lazy var coverImageView: UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleAspectFill
-        image.backgroundColor = Colors.lightGray.toUIColor
-        return image
-    }()
+    lazy var coverImageView: ImageView = ImageView()
 
     lazy var gradientOverlayView: UIView = {
         let view = UIView()
