@@ -14,7 +14,8 @@ struct EventViewModel {
     let imageUrl: String
     let price: String
     let date: String
-    let location: String
+    var latitude: Double
+    var longitude: Double
     let description: String
 
     init (fromEvent event: Event) {
@@ -24,7 +25,8 @@ struct EventViewModel {
         price = CurrencyFormatter.format(event.price)
         date = DateFormatterUtils.format(event.date)
         description = event.description
-        location = ""
+        latitude = event.latitude
+        longitude = event.longitude
     }
 }
 

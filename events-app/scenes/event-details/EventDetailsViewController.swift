@@ -88,8 +88,11 @@ class EventDetailsViewController: BaseViewController {
         eventDetailsView.name = viewModel.title
         eventDetailsView.price = viewModel.price
         eventDetailsView.date = viewModel.date
-        eventDetailsView.location = viewModel.location
         eventDetailsView.descriptionText = viewModel.description
+
+        GeolocationService.getAddressForLocationWith(latitude: viewModel.latitude, longitude: viewModel.longitude) { [weak self] address in
+            self?.eventDetailsView.address = address
+        }
 
         RemoteFileService.shared
             .getImage(from: viewModel.imageUrl)

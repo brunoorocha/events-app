@@ -41,6 +41,7 @@
 		A33ED43024B2AE48005260AD /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A33ED42D24B2AE48005260AD /* Poppins-Regular.ttf */; };
 		A33ED43124B2AE48005260AD /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A33ED42E24B2AE48005260AD /* Poppins-SemiBold.ttf */; };
 		A33ED43324B2AEBA005260AD /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33ED43224B2AEBA005260AD /* Typography.swift */; };
+		A35934AC24CE45CE00421B7C /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35934AB24CE45CE00421B7C /* GeolocationService.swift */; };
 		A35C393224AF4D4E00BD7D3A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C393124AF4D4E00BD7D3A /* EventsViewController.swift */; };
 		A35C393424AF4D7E00BD7D3A /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C393324AF4D7E00BD7D3A /* EventsViewModel.swift */; };
 		A3896F2D24AE7A6200C9E2EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3896F2C24AE7A6200C9E2EE /* AppDelegate.swift */; };
@@ -112,6 +113,7 @@
 		A33ED42D24B2AE48005260AD /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		A33ED42E24B2AE48005260AD /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		A33ED43224B2AEBA005260AD /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		A35934AB24CE45CE00421B7C /* GeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationService.swift; sourceTree = "<group>"; };
 		A35C393124AF4D4E00BD7D3A /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		A35C393324AF4D7E00BD7D3A /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
 		A3896F2924AE7A6200C9E2EE /* events-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "events-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +184,7 @@
 		A337CE7E24AE853400E48BC8 /* services */ = {
 			isa = PBXGroup;
 			children = (
+				A35934AA24CE45B500421B7C /* geolocation */,
 				A33B51B124CBB63800C9D4E5 /* remote-files */,
 				A337CE7F24AE855D00E48BC8 /* events */,
 			);
@@ -260,6 +263,14 @@
 				A33ED42E24B2AE48005260AD /* Poppins-SemiBold.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		A35934AA24CE45B500421B7C /* geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				A35934AB24CE45CE00421B7C /* GeolocationService.swift */,
+			);
+			path = geolocation;
 			sourceTree = "<group>";
 		};
 		A3896F2024AE7A6200C9E2EE = {
@@ -585,6 +596,7 @@
 				A3E0231424B48EA300839D51 /* EventViewModel.swift in Sources */,
 				A3165ABB24AE8C6000ADD81A /* CheckinData.swift in Sources */,
 				A300FB1B24B3C9170052E9B1 /* SmallLabel.swift in Sources */,
+				A35934AC24CE45CE00421B7C /* GeolocationService.swift in Sources */,
 				A3D8E2D224AE830800388B7D /* BaseNavigationController.swift in Sources */,
 				A337CE8824AE87AE00E48BC8 /* Cupom.swift in Sources */,
 				A317D5A524B93DC30065E66D /* EventDetailsViewController.swift in Sources */,

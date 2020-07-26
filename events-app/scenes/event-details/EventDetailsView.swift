@@ -63,9 +63,9 @@ class EventDetailsView: BaseScreenView {
         }
     }
 
-    var location: String? = nil {
+    var address: String? = nil {
         didSet {
-            locationItem.descriptionLabel.text = location
+            locationItem.descriptionLabel.text = address
         }
     }
 
