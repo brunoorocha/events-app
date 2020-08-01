@@ -18,7 +18,7 @@ struct EventsViewModel {
     let error: PublishSubject<Error> = PublishSubject()
     let disposeBag = DisposeBag()
 
-    init(service: EventsServiceProtocol = EventsApiService()) {
+    init(service: EventsServiceProtocol) {
         self.service = service
     }
     

@@ -10,7 +10,7 @@ import Moya
 
 enum EventsApi {
     case events
-    case event(eventId: Int)
+    case event(eventId: String)
     case checkin
 }
 
@@ -24,7 +24,7 @@ extension EventsApi: TargetType {
         case .events:
             return "events"
         case .event(let eventId):
-            return "events/\(eventId)"
+            return "events/" + eventId
         case .checkin:
             return "checkin"
         }

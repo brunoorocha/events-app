@@ -15,7 +15,6 @@ enum RemoteFileServiceError: Error {
 
 class RemoteFileService {
     static let shared = RemoteFileService()
-    private let disposeBag = DisposeBag()
 
     private init() {}
 

@@ -10,16 +10,27 @@ import RxSwift
 
 class EventDetailsCoordinator: Coordinator<Void> {
     var navigationController: UINavigationController?
-    let viewModel: EventViewModel
+    let event: Event
 
-    init (viewModel: EventViewModel, navigationController: UINavigationController?) {
+    init (event: Event, navigationController: UINavigationController?) {
         self.navigationController = navigationController
-        self.viewModel = viewModel
+        self.event = event
     }
 
     override func start() -> Observable<Void> {
-        let eventDetailsViewController = EventDetailsViewController(viewModel: viewModel)
+        let eventsApiService = EventsApiService()
+        let eventDetailsViewModel = EventDetailsViewModel(service: eventsApiService)
+        let eventDetailsViewController = EventDetailsViewController(viewModel: eventDetailsViewModel)
         navigationController?.pushViewController(eventDetailsViewController, animated: true)
+
+        eventDetailsViewModel.getEvent(withId: event.id)
         return Observable.never()
+    }
+
+    func coordinateToCheckin () -> Observable<Void> {
+        let viewModel = CheckinViewModel(event: event)
+        let checkinCoordinator = CheckinCoordinator(viewModel: viewModel, navigationController: navigationController)
+
+        return coordinate(to: checkinCoordinator)
     }
 }

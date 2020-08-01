@@ -17,8 +17,10 @@ class EventsCoordinator: Coordinator<Void> {
     }
 
     override func start() -> Observable<Void> {
-        let viewModel = EventsViewModel()
+        let eventsApiService = EventsApiService()
+        let viewModel = EventsViewModel(service: eventsApiService)
         let eventsViewController = EventsViewController(with: viewModel)
+
         navigationController?.pushViewController(eventsViewController, animated: true)
         
         viewModel.selectedEvent
@@ -33,7 +35,7 @@ class EventsCoordinator: Coordinator<Void> {
     
     private func coordinateToEventDetails (eventViewModel: EventViewModel) -> Observable<Void> {
         let eventDetailsCoordinator = EventDetailsCoordinator(
-            viewModel: eventViewModel,
+            event: eventViewModel.event,
             navigationController: navigationController
         )
 

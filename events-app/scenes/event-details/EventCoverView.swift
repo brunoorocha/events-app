@@ -19,7 +19,7 @@ class EventCoverView: UIView {
     lazy var gradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
-            UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor,
+            UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor,
             UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor
         ]
 

@@ -10,14 +10,14 @@ import RxSwift
 import UIKit
 
 class EventDetailsViewController: BaseViewController {
-    private let eventDetailsView = EventDetailsView()
+    let eventDetailsView = EventDetailsView()
     var changeStatusBarStyleOffset: CGFloat = 0
 
-    var viewModel: EventViewModel
-    
+    var viewModel: EventDetailsViewModel
+
     let disposeBag = DisposeBag()
 
-    init (viewModel: EventViewModel) {
+    init (viewModel: EventDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,7 +40,6 @@ class EventDetailsViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
         customizeNavigationBar()
     }
 
@@ -51,6 +50,7 @@ class EventDetailsViewController: BaseViewController {
     }
 
     func customizeNavigationBar () {
+        navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.backgroundColor = .none
@@ -83,22 +83,40 @@ class EventDetailsViewController: BaseViewController {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: newTitleColor]
         UIApplication.shared.statusBarUIView?.backgroundColor = newBackgroundColor
     }
-    
+
     private func bindToViewModel () {
-        eventDetailsView.name = viewModel.title
-        eventDetailsView.price = viewModel.price
-        eventDetailsView.date = viewModel.date
-        eventDetailsView.descriptionText = viewModel.description
-
-        GeolocationService.getAddressForLocationWith(latitude: viewModel.latitude, longitude: viewModel.longitude) { [weak self] address in
-            self?.eventDetailsView.address = address
-        }
-
-        RemoteFileService.shared
-            .getImage(from: viewModel.imageUrl)
+        viewModel.isLoading
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] image in
-                self?.eventDetailsView.coverImage = image
+            .subscribe(onNext: { [weak self] isLoading in
+                self?.eventDetailsView.isLoading = isLoading
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.event
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] eventViewModel in
+                self?.eventDetailsView.name = eventViewModel.title
+                self?.eventDetailsView.price = eventViewModel.price
+                self?.eventDetailsView.date = eventViewModel.date
+                self?.eventDetailsView.descriptionText = eventViewModel.description
+
+                guard let disposeBag = self?.disposeBag else { return }
+
+                RemoteFileService.shared
+                    .getImage(from: eventViewModel.imageUrl)
+                    .observeOn(MainScheduler.instance)
+                    .subscribe(onNext: { [weak self] image in
+                        self?.eventDetailsView.coverImage = image
+                    })
+                    .disposed(by: disposeBag)
+
+                GeolocationService.shared
+                    .getAddress(latitude: eventViewModel.latitude, longitude: eventViewModel.longitude)
+                    .observeOn(MainScheduler.instance)
+                    .subscribe(onNext: { address in
+                        self?.eventDetailsView.address = address
+                    })
+                    .disposed(by: disposeBag)
             })
             .disposed(by: disposeBag)
     }

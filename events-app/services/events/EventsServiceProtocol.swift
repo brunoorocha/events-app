@@ -10,6 +10,6 @@ import RxSwift
 
 protocol EventsServiceProtocol {
     func getEvents () -> Single<[Event]>
-    func getEvent (withId id: Int) -> Single<Event>
+    func getEvent (withId id: String) -> Single<Event>
     func checkin (_ payload: CheckinPayload) -> Completable
 }

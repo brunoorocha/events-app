@@ -11,5 +11,5 @@ import Foundation
 struct CheckinPayload: Encodable {
     let name: String
     let email: String
-    let eventId: Int
+    let eventId: String
 }

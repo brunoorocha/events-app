@@ -9,6 +9,7 @@
 import UIKit
 
 class EventDetailsView: BaseScreenView {
+    let loadingView = ActivityIndicatorView()
 
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -44,7 +45,8 @@ class EventDetailsView: BaseScreenView {
 
     let headerView = EventHeaderView()
     let coverView = EventCoverView()
-    
+    let checkinButton = Button()
+
     var name: String? = nil {
         didSet {
             headerView.eventNameLabel.text = name
@@ -80,12 +82,30 @@ class EventDetailsView: BaseScreenView {
             coverView.coverImageView.showingImage(coverImage)
         }
     }
+    
+    var isLoading: Bool = false {
+        didSet {
+            if (isLoading) {
+                showLoadingView()
+                return
+            }
+
+            showEventDetails()
+        }
+    }
 
     override func setupSubviews () {
         addSubview(scrollView)
+        addSubview(checkinButton)
+        addSubview(loadingView)
+
         scrollView.addSubview(stackView)
 
-        scrollView.edgesToSuperview()
+        scrollView.topToSuperview()
+        scrollView.leftToSuperview()
+        scrollView.rightToSuperview()
+        scrollView.bottomToTop(of: checkinButton)
+
         stackView.edgesToSuperview(insets: .init(top: 0, left: 0, bottom: 40, right: 0))
 
         stackView.addArrangedSubview(coverView)
@@ -100,7 +120,14 @@ class EventDetailsView: BaseScreenView {
 
         coverView.heightConstraint = coverView.height(to: self, multiplier: 0.4)
         coverView.heightConstraint?.isActive = true
-        
+
+        checkinButton.leftToSuperview()
+        checkinButton.rightToSuperview()
+        checkinButton.bottomToSuperview()
+        checkinButton.setTitle("FAZER CHEKIN", for: .normal)
+
+        loadingView.edgesToSuperview()
+        isLoading = true
     }
 
     private func createItemView (with iconImage: UIImage? = nil, andTitle title: String? = nil) -> EventDetailItemView {
@@ -108,5 +135,19 @@ class EventDetailsView: BaseScreenView {
         item.iconView.image = iconImage
         item.titleLabel.text = title
         return item
+    }
+
+    private func showLoadingView () {
+        loadingView.isHidden = false
+        scrollView.isHidden = true
+        checkinButton.isHidden = true
+        loadingView.startAnimating()
+    }
+
+    private func showEventDetails () {
+        loadingView.isHidden = true
+        scrollView.isHidden = false
+        checkinButton.isHidden = false
+        loadingView.stopAnimating()
     }
 }

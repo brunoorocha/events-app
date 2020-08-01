@@ -9,7 +9,6 @@
 import Foundation
 
 struct EventViewModel {
-    let id: String
     let title: String
     let imageUrl: String
     let price: String
@@ -18,8 +17,10 @@ struct EventViewModel {
     var longitude: Double
     let description: String
 
+    let event: Event
+
     init (fromEvent event: Event) {
-        id = event.id
+        self.event = event
         title = event.title
         imageUrl = event.image
         price = CurrencyFormatter.format(event.price)

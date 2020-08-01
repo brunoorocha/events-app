@@ -7,9 +7,20 @@
 //
 
 import MapKit
+import RxSwift
+
+enum GeolocationServiceError: Error {
+    case locationNotFound
+    case locationRequestFail
+}
 
 class GeolocationService {
-    static func getAddressForLocationWith (latitude: Double, longitude: Double, completion: @escaping (String?) -> Void) {
+    static let shared = GeolocationService()
+
+    private init () {}
+
+    func getAddress (latitude: Double, longitude: Double) -> Observable<String?> {
+        let locationAddress: PublishSubject<String?> = PublishSubject()
         let location = CLLocation(latitude: latitude, longitude: longitude)
         let geocoder = CLGeocoder()
         var address = ""
@@ -17,13 +28,12 @@ class GeolocationService {
         geocoder.reverseGeocodeLocation(location) { (places, error) in
             guard let places = places,
                 let place = places.first else {
-                completion(nil)
+                locationAddress.onError(GeolocationServiceError.locationNotFound)
                 return
             }
 
             if let _ = error {
-                completion(nil)
-                return
+                locationAddress.onError(GeolocationServiceError.locationRequestFail)
             }
 
             if let street = place.thoroughfare {
@@ -42,7 +52,9 @@ class GeolocationService {
                 address += "\(country)"
             }
 
-            completion(address)
+            locationAddress.onNext(address)
         }
+
+        return locationAddress.asObservable()
     }
 }

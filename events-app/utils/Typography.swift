@@ -15,8 +15,9 @@ enum Typography {
     case heading4
     case heading5
     case paragraph
+    case label
     case small
-    
+
     var toUIFont: UIFont {
         switch self {
         case .heading1:
@@ -31,6 +32,8 @@ enum Typography {
             return UIFont(name: "Poppins-SemiBold", size: 12) ?? UIFont.systemFont(ofSize: 12)
         case .paragraph:
             return UIFont(name: "Poppins-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16)
+        case .label:
+            return UIFont(name: "Poppins-SemiBold", size: 16) ?? UIFont.systemFont(ofSize: 16)
         case .small:
             return UIFont(name: "Poppins-Regular", size: 12) ?? UIFont.systemFont(ofSize: 12)
         }

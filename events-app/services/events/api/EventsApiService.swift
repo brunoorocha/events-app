@@ -27,7 +27,7 @@ final class EventsApiService: EventsServiceProtocol {
                 .catchError(handleError)
     }
 
-    func getEvent(withId id: Int) -> Single<Event> {
+    func getEvent(withId id: String) -> Single<Event> {
         return provider
                 .rx
                 .request(.event(eventId: id))
