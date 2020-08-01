@@ -35,5 +35,6 @@ class EventHeaderView: UIView {
         priceLabel.bottomToSuperview(offset: -40)
 
         priceLabel.textColor = Colors.primary.toUIColor
+        backgroundColor = Colors.background.toUIColor
     }
 }

@@ -10,18 +10,25 @@ import RxSwift
 
 class CheckinCoordinator: Coordinator<Void> {
     var navigationController: UINavigationController?
-    let viewModel: CheckinViewModel
+    let event: Event
     
-    init (viewModel: CheckinViewModel, navigationController: UINavigationController?) {
+    init (event: Event, navigationController: UINavigationController?) {
         self.navigationController = navigationController
-        self.viewModel = viewModel
+        self.event = event
     }
     
     override func start() -> Observable<Void> {
+        let viewModel = CheckinViewModel(event: event)
         let checkinViewController = CheckinViewController(viewModel: viewModel)
         checkinViewController.modalPresentationStyle = .formSheet
         navigationController?.present(checkinViewController, animated: true)
 
-        return Observable.never()
+        let didDismiss = viewModel.didDismiss.map { _ in () }
+
+        return didDismiss
+                .take(1)
+                .do(onNext: { _ in
+                    checkinViewController.dismiss(animated: true)
+                })
     }
 }

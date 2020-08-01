@@ -8,7 +8,7 @@
 
 import RxSwift
 
-struct EventsViewModel {
+class EventsViewModel {
     var service: EventsServiceProtocol
 
     let events: PublishSubject<[EventViewModel]> = PublishSubject()
@@ -26,10 +26,10 @@ struct EventsViewModel {
         isLoading.onNext(true)
 
         service.getEvents()
-            .subscribe(onSuccess: { events in
+            .subscribe(onSuccess: { [weak self] events in
                 let eventsViewModels = events.map { EventViewModel(fromEvent: $0) }
-                self.events.onNext(eventsViewModels)
-                self.isLoading.onNext(false)
+                self?.events.onNext(eventsViewModels)
+                self?.isLoading.onNext(false)
             }, onError: { error in
                 self.error.onNext(error)
                 self.isLoading.onNext(false)

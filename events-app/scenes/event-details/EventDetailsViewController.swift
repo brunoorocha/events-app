@@ -92,6 +92,10 @@ class EventDetailsViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
 
+        eventDetailsView.checkinButton.rx.tap
+            .bind(to: viewModel.doCheckin)
+            .disposed(by: disposeBag)
+
         viewModel.event
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] eventViewModel in

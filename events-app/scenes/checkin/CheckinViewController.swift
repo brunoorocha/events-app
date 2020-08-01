@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class CheckinViewController: UIViewController {
     let viewModel: CheckinViewModel
     let checkinView = ChekinView()
+
+    private let disposeBag = DisposeBag()
 
     init (viewModel: CheckinViewModel) {
         self.viewModel = viewModel
@@ -27,15 +30,19 @@ class CheckinViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupNavigationBar()
-        
+        presentationController?.delegate = self
+        bindToViewModel()
     }
 
-    private func setupNavigationBar () {
-        title = "Checkin"
+    private func bindToViewModel () {
+        checkinView.navigationBar.closeButton.rx.tap
+            .bind(to: viewModel.didDismiss)
+            .disposed(by: disposeBag)
+    }
+}
+
+extension CheckinViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        viewModel.didDismiss.onNext(())
     }
 }

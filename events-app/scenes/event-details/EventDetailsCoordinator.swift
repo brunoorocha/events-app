@@ -23,14 +23,19 @@ class EventDetailsCoordinator: Coordinator<Void> {
         let eventDetailsViewController = EventDetailsViewController(viewModel: eventDetailsViewModel)
         navigationController?.pushViewController(eventDetailsViewController, animated: true)
 
+        eventDetailsViewModel.doCheckin
+            .flatMap { [unowned self] in
+                self.coordinateToCheckin()
+            }
+            .subscribe()
+            .disposed(by: disposeBag)
+
         eventDetailsViewModel.getEvent(withId: event.id)
         return Observable.never()
     }
 
     func coordinateToCheckin () -> Observable<Void> {
-        let viewModel = CheckinViewModel(event: event)
-        let checkinCoordinator = CheckinCoordinator(viewModel: viewModel, navigationController: navigationController)
-
+        let checkinCoordinator = CheckinCoordinator(event: event, navigationController: navigationController)
         return coordinate(to: checkinCoordinator)
     }
 }

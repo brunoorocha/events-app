@@ -6,8 +6,14 @@
 //  Copyright © 2020 Bruno Rocha. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
-struct CheckinViewModel {
+class CheckinViewModel {
     let event: Event
+
+    let didDismiss = PublishSubject<Void>()
+
+    init (event: Event) {
+        self.event = event
+    }
 }

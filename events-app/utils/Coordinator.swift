@@ -37,4 +37,3 @@ class Coordinator<ResultType>: NSObject {
         fatalError("start() method should be implemented")
     }
 }
-

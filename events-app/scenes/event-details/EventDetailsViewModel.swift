@@ -8,10 +8,12 @@
 
 import RxSwift
 
-struct EventDetailsViewModel {
-    let event: PublishSubject<EventViewModel> = PublishSubject()
-    let isLoading: PublishSubject<Bool> = PublishSubject()
-    let error: PublishSubject<Error> = PublishSubject()
+class EventDetailsViewModel {
+    let event = PublishSubject<EventViewModel>()
+    let isLoading = PublishSubject<Bool>()
+    let error = PublishSubject<Error>()
+
+    let doCheckin = PublishSubject<Void>()
 
     let disposeBag = DisposeBag()
     let service: EventsApiService
@@ -24,12 +26,12 @@ struct EventDetailsViewModel {
         isLoading.onNext(true)
 
         service.getEvent(withId: id)
-            .subscribe(onSuccess: { event in
+            .subscribe(onSuccess: { [weak self] event in
                 let eventViewModel = EventViewModel(fromEvent: event)
-                self.event.onNext(eventViewModel)
-                self.isLoading.onNext(false)
-            }, onError: { error in
-                self.error.onNext(error)
+                self?.event.onNext(eventViewModel)
+                self?.isLoading.onNext(false)
+            }, onError: { [weak self] error in
+                self?.error.onNext(error)
             })
             .disposed(by: disposeBag)
     }
