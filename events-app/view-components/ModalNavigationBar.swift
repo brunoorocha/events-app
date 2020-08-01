@@ -10,9 +10,9 @@ import UIKit
 import TinyConstraints
 
 class ModalNavigationBar: UIView {
-    let titleLabel = ParagraphLabel()
+    lazy var titleLabel = ParagraphLabel()
 
-    let closeButton: UIButton = {
+    lazy var closeButton: UIButton = {
         let button = UIButton()
         let closeIcon = Iconography.close.toUIImage
         button.setImage(closeIcon, for: .normal)
@@ -22,12 +22,7 @@ class ModalNavigationBar: UIView {
         return button
     }()
 
-    let borderBottom: UIView = {
-        let view = UIView()
-        view.backgroundColor = Colors.lightGray.toUIColor
-        view.height(1)
-        return view
-    }()
+    lazy var borderBottom = HorizontalSeparator()
 
     var title: String? = nil {
         didSet {

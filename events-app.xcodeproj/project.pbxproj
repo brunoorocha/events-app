@@ -18,6 +18,9 @@
 		A300FB1924B3C70C0052E9B1 /* ParagraphLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB1824B3C70C0052E9B1 /* ParagraphLabel.swift */; };
 		A300FB1B24B3C9170052E9B1 /* SmallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300FB1A24B3C9170052E9B1 /* SmallLabel.swift */; };
 		A307354B24D4B94F00B0A476 /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307354A24D4B94F00B0A476 /* EventDetailsViewModel.swift */; };
+		A307354F24D6001500B0A476 /* FormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307354E24D6001500B0A476 /* FormFieldView.swift */; };
+		A307355124D600C500B0A476 /* HorizontalSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307355024D600C500B0A476 /* HorizontalSeparator.swift */; };
+		A307355324D606C500B0A476 /* ChekinResumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307355224D606C500B0A476 /* ChekinResumeView.swift */; };
 		A3165ABB24AE8C6000ADD81A /* CheckinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3165ABA24AE8C6000ADD81A /* CheckinData.swift */; };
 		A317D59F24B936C40065E66D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A317D59E24B936C40065E66D /* Coordinator.swift */; };
 		A317D5A124B938BE0065E66D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A317D5A024B938BE0065E66D /* AppCoordinator.swift */; };
@@ -95,6 +98,9 @@
 		A300FB1824B3C70C0052E9B1 /* ParagraphLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphLabel.swift; sourceTree = "<group>"; };
 		A300FB1A24B3C9170052E9B1 /* SmallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLabel.swift; sourceTree = "<group>"; };
 		A307354A24D4B94F00B0A476 /* EventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModel.swift; sourceTree = "<group>"; };
+		A307354E24D6001500B0A476 /* FormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldView.swift; sourceTree = "<group>"; };
+		A307355024D600C500B0A476 /* HorizontalSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSeparator.swift; sourceTree = "<group>"; };
+		A307355224D606C500B0A476 /* ChekinResumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekinResumeView.swift; sourceTree = "<group>"; };
 		A3165ABA24AE8C6000ADD81A /* CheckinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinData.swift; sourceTree = "<group>"; };
 		A317D59E24B936C40065E66D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A317D5A024B938BE0065E66D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -332,6 +338,7 @@
 				A3B775E524D0CDA50052EBE2 /* ChekinViewModel.swift */,
 				A3B775E724D0CDC70052EBE2 /* CheckinCoordinator.swift */,
 				A3B775E924D0E5770052EBE2 /* CheckinView.swift */,
+				A307355224D606C500B0A476 /* ChekinResumeView.swift */,
 			);
 			path = checkin;
 			sourceTree = "<group>";
@@ -397,6 +404,8 @@
 				A33B51AF24CBAE9900C9D4E5 /* ImageView.swift */,
 				A35934AD24CE4DFE00421B7C /* Button.swift */,
 				A3B775ED24D0E71A0052EBE2 /* ModalNavigationBar.swift */,
+				A307354E24D6001500B0A476 /* FormFieldView.swift */,
+				A307355024D600C500B0A476 /* HorizontalSeparator.swift */,
 			);
 			path = "view-components";
 			sourceTree = "<group>";
@@ -606,6 +615,7 @@
 				A317D5A324B939650065E66D /* EventsCoordinator.swift in Sources */,
 				A317D5A924B943560065E66D /* EventDetailsView.swift in Sources */,
 				A317D5A724B93DFE0065E66D /* EventDetailsCoordinator.swift in Sources */,
+				A307355324D606C500B0A476 /* ChekinResumeView.swift in Sources */,
 				A3B775E824D0CDC70052EBE2 /* CheckinCoordinator.swift in Sources */,
 				A300FB0D24B3BCED0052E9B1 /* Colors.swift in Sources */,
 				A3D8E2D424AE833600388B7D /* BaseViewController.swift in Sources */,
@@ -640,10 +650,12 @@
 				A33ED42824B2A5AE005260AD /* CanHandleAnErrorProtocol.swift in Sources */,
 				A3C8AD1724BE8411005E72EA /* Heading5Label.swift in Sources */,
 				A3B775E424D0CD540052EBE2 /* CheckinViewController.swift in Sources */,
+				A307354F24D6001500B0A476 /* FormFieldView.swift in Sources */,
 				A3C8AD0B24BE4C35005E72EA /* Heading2.swift in Sources */,
 				A3D8E2D824AE83E600388B7D /* BaseScreenView.swift in Sources */,
 				A300FB1724B3C3B50052E9B1 /* RoundedCornersImageView.swift in Sources */,
 				A3C8AD0D24BE4E77005E72EA /* Heading4Label.swift in Sources */,
+				A307355124D600C500B0A476 /* HorizontalSeparator.swift in Sources */,
 				A317D59F24B936C40065E66D /* Coordinator.swift in Sources */,
 				A35C393224AF4D4E00BD7D3A /* EventsViewController.swift in Sources */,
 				A35C393424AF4D7E00BD7D3A /* EventsViewModel.swift in Sources */,
