@@ -38,6 +38,22 @@ class CheckinViewController: UIViewController {
         checkinView.navigationBar.closeButton.rx.tap
             .bind(to: viewModel.didDismiss)
             .disposed(by: disposeBag)
+
+        checkinView.nameField.textField.rx.text.orEmpty
+            .bind(to: viewModel.name)
+            .disposed(by: disposeBag)
+
+        checkinView.emailField.textField.rx.text.orEmpty
+            .bind(to: viewModel.email)
+            .disposed(by: disposeBag)
+
+        checkinView.cupomField.textField.rx.text.orEmpty
+            .bind(to: viewModel.cupom)
+            .disposed(by: disposeBag)
+
+        viewModel.isCheckinActive
+            .bind(to: checkinView.confirmButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 }
 

@@ -14,6 +14,15 @@ class Button: UIButton {
         customize()
     }
 
+    override var isEnabled: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.3) {
+                self.backgroundColor = self.isEnabled ? Colors.primary.toUIColor : Colors.mediumGray.toUIColor
+                self.layer.shadowOpacity = self.isEnabled ? 0.15 : 0
+            }
+        }
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
