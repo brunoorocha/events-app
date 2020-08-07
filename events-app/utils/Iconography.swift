@@ -15,7 +15,8 @@ enum Iconography {
     case arrowBack
     case imagePlaceholder
     case close
-    
+    case success
+
     var toUIImage: UIImage? {
         switch self {
         case .calendar:
@@ -30,6 +31,8 @@ enum Iconography {
             return UIImage(named: "image_placeholder")
         case .close:
             return UIImage(named: "close_icon")
+        case .success:
+            return UIImage(named: "check_icon")
         }
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class CheckinViewController: UIViewController {
+class CheckinViewController: BaseViewController {
     let viewModel: CheckinViewModel
     let checkinView = ChekinView()
 
@@ -30,15 +30,20 @@ class CheckinViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presentationController?.delegate = self
         bindToViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar () {
+        title = "Checkin"
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     private func bindToViewModel () {
-        checkinView.navigationBar.closeButton.rx.tap
-            .bind(to: viewModel.didDismiss)
-            .disposed(by: disposeBag)
-
         checkinView.nameField.textField.rx.text.orEmpty
             .bind(to: viewModel.name)
             .disposed(by: disposeBag)
@@ -47,18 +52,17 @@ class CheckinViewController: UIViewController {
             .bind(to: viewModel.email)
             .disposed(by: disposeBag)
 
-        checkinView.cupomField.textField.rx.text.orEmpty
-            .bind(to: viewModel.cupom)
-            .disposed(by: disposeBag)
-
         viewModel.isCheckinActive
             .bind(to: checkinView.confirmButton.rx.isEnabled)
             .disposed(by: disposeBag)
-    }
-}
 
-extension CheckinViewController: UIAdaptivePresentationControllerDelegate {
-    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        checkinView.confirmButton.rx.tap
+            .bind(to: viewModel.didCheckin)
+            .disposed(by: disposeBag)
+    }
+
+    override func onPopViewController () {
         viewModel.didDismiss.onNext(())
     }
 }
+

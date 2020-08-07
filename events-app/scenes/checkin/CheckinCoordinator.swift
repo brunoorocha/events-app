@@ -20,15 +20,31 @@ class CheckinCoordinator: Coordinator<Void> {
     override func start() -> Observable<Void> {
         let viewModel = CheckinViewModel(event: event)
         let checkinViewController = CheckinViewController(viewModel: viewModel)
-        checkinViewController.modalPresentationStyle = .formSheet
-        navigationController?.present(checkinViewController, animated: true)
+        navigationController?.pushViewController(checkinViewController, animated: true)
 
         let didDismiss = viewModel.didDismiss.map { _ in () }
+        let didDismissSuccess = viewModel.didCheckin
+            .flatMap({ [unowned self] _ in
+                self.coordinateToCheckinSuccess()
+            })
 
-        return didDismiss
+        return Observable
+                .merge(didDismiss, didDismissSuccess)
                 .take(1)
-                .do(onNext: { _ in
-                    checkinViewController.dismiss(animated: true)
+    }
+
+    func coordinateToCheckinSuccess () -> Observable<Void> {
+        let successViewModel = CheckinSuccessViewModel()
+        let successViewController = CheckinSuccessViewController(viewModel: successViewModel)
+        successViewController.modalPresentationStyle = .overFullScreen
+        navigationController?.present(successViewController, animated: true)
+
+        let didDismissSuccess = successViewModel.didDismiss.map { _ in () }
+
+        return didDismissSuccess
+                .do(onNext: { [weak self] _ in
+                    successViewController.dismiss(animated: true)
+                    self?.navigationController?.popViewController(animated: false)
                 })
     }
 }

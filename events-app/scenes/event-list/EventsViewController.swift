@@ -38,6 +38,7 @@ class EventsViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        shouldHideNavigationBarShadow = true
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     

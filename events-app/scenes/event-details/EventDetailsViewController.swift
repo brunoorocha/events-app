@@ -30,7 +30,6 @@ class EventDetailsViewController: BaseViewController {
         super.viewDidLoad()
         eventDetailsView.scrollView.delegate = self
         changeStatusBarStyleOffset = 320
-        customizeNavigationBar()
         bindToViewModel()
     }
 
@@ -40,7 +39,7 @@ class EventDetailsViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        customizeNavigationBar()
+        setupNavigationBar()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,16 +48,11 @@ class EventDetailsViewController: BaseViewController {
         navigationController?.navigationBar.barStyle = .default
     }
 
-    func customizeNavigationBar () {
+    func setupNavigationBar () {
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.backgroundColor = .none
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.tintColor = .white
-
-        UIApplication.shared.statusBarUIView?.backgroundColor = .none
-        navigationItem.backBarButtonItem?.title = ""
+        updateStatusBarStyleWhenScroll(eventDetailsView.scrollView)
+        updatedNavigationBarOpacityWhenScroll(eventDetailsView.scrollView)
         title = "Evento"
     }
 
@@ -80,7 +74,8 @@ class EventDetailsViewController: BaseViewController {
 
         navigationController?.navigationBar.tintColor = newTitleColor
         navigationController?.navigationBar.backgroundColor = newBackgroundColor
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: newTitleColor]
+        navigationController?.navigationBar.layer.shadowOpacity = Float(roundedBarOpacity)
+        navigationController?.navigationBar.titleTextAttributes?[.foregroundColor] = newTitleColor
         UIApplication.shared.statusBarUIView?.backgroundColor = newBackgroundColor
     }
 

@@ -13,10 +13,10 @@ class CheckinViewModel {
 
     let name = BehaviorSubject<String>(value: "")
     let email = BehaviorSubject<String>(value: "")
-    let cupom = BehaviorSubject<String>(value: "")
     let isCheckinActive = BehaviorSubject<Bool>(value: false)
 
     let didDismiss = PublishSubject<Void>()
+    let didCheckin = PublishSubject<Void>()
     private let disposeBag = DisposeBag()
 
     init (event: Event) {
